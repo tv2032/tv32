@@ -1,28 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .video-container {
+      max-width: 800px; /* Limits the maximum width of the videos */
+      margin: 0 auto;   /* Centers the container on the page */
+      padding: 20px;
+    }
+    
+    .video-wrapper {
+      margin-bottom: 20px; /* Creates spacing between the two videos */
+    }
 
-  <!DOCTYPE html>
-  <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  </head>
-  <body>
-    <table width="100%">
-      <tr><td>
-        
-        <iframe src="https://www.dailymotion.com/embed/video/k67nR5sNMctK6BHNUam" 
-    style="position:absolute;width:100%;height:100%;border:0" 
-    allowfullscreen="" 
-    allow="autoplay; fullscreen; picture-in-picture; remote-playback" ></iframe>
+    iframe {
+      width: 100%;
+      aspect-ratio: 16 / 9; /* Keeps the video in a perfect widescreen ratio */
+      border: 0;
+    }
+  </style>
+</head>
+<body>
 
-        </td></tr><tr><td>
-        
-        <iframe src="https://www.dailymotion.com/embed/video/k1e33rJt1GCzVlHNGvs" 
-    style="position:absolute;width:100%;height:100%;border:0" 
-    allowfullscreen="" 
-    allow="autoplay; fullscreen; picture-in-picture; remote-playback" ></iframe>
+  <div class="video-container">
+    
+    <div class="video-wrapper">
+      <iframe src="https://www.dailymotion.com/embed/video/k67nR5sNMctK6BHNUam" 
+              allowfullscreen 
+              allow="fullscreen; picture-in-picture; remote-playback"></iframe>
+    </div>
 
-        </td></tr>
-    </table>
-  </body>
-  </html>
-  
+    <div class="video-wrapper">
+      <iframe src="https://www.dailymotion.com/embed/video/k1e33rJt1GCzVlHNGvs" 
+              allowfullscreen 
+              allow="fullscreen; picture-in-picture; remote-playback"></iframe>
+    </div>
+
+  </div>
+
+</body>
+</html>
