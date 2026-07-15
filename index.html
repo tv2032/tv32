@@ -166,13 +166,16 @@
       const iframe = document.createElement('iframe');
       iframe.setAttribute('src', `https://www.dailymotion.com/embed/video/${videoId}?autoplay=1`);
 
-      // --- WHAT CHANGED: We added these three lines to restore the fullscreen button ---
-      iframe.setAttribute('allowfullscreen', 'true');
-      iframe.setAttribute('webkitallowfullscreen', 'true');
-      iframe.setAttribute('mozallowfullscreen', 'true');
-      // ---------------------------------------------------------------------------------
+     // 1. Force modern boolean properties directly on the element object
+      iframe.allowFullscreen = true; 
+      
+      // 2. Add legacy HTML attributes as empty/boolean attributes (the standard way)
+      iframe.setAttribute('allowfullscreen', '');
+      iframe.setAttribute('webkitallowfullscreen', '');
+      iframe.setAttribute('mozallowfullscreen', '');
 
-      iframe.setAttribute('allow', 'autoplay; fullscreen; picture-in-picture; remote-playback');
+      // 3. Set the feature policy, explicitly allowing fullscreen
+      iframe.setAttribute('allow', 'autoplay; fullscreen *; picture-in-picture; remote-playback');
 
       // Clear the div and insert the iframe
       element.innerHTML = '';
