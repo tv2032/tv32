@@ -7,76 +7,75 @@
         position: relative;
         width: 100%;
         aspect-ratio: 16 / 9;
-        background: #000;
+        background: #111; /* Dark sleek background for the video container */
         cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #333;
       }
-      /* Styles the static thumbnail cover image */
-      .video-cover {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        top: 0;
-        left: 0;
-      }
-      /* Creates a simulated overlay play button */
+      /* Creates a simulated overlay play button centered in your cell */
       .play-btn {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 70px;
-        height: 70px;
-        background: rgba(0, 0, 0, 0.8);
+        width: 80px;
+        height: 80px;
+        background: rgba(0, 0, 0, 0.85);
         color: #fff;
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 24px;
+        font-size: 28px;
         font-family: sans-serif;
-        border: 2px solid #fff;
-        transition: background 0.2s, transform 0.2s;
-        z-index: 2;
+        border: 3px solid #fff;
+        transition: all 0.2s ease;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.5);
       }
       .video-wrapper:hover .play-btn {
-        background: #ff0055; /* Changes color when user hovers */
-        transform: translate(-50%, -50%) scale(1.1);
+        background: #0066ff; /* Clean blue glow on hover */
+        transform: scale(1.1);
+      }
+      /* Simple helper text beneath the button */
+      .play-text {
+        position: absolute;
+        bottom: 15px;
+        color: #aaa;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
       }
     </style>
   </head>
   <body>
-    <table width="100%">
+
+    <table width="100%" cellspacing="10">
       <tr>
         <td>
-          <!-- Cover for Video 1 (k67nR5sNMctK6BHNUam) -->
+          <!-- Container for Video 1 -->
           <div class="video-wrapper" onclick="loadVideo(this, 'k67nR5sNMctK6BHNUam')">
-            <img class="video-cover" src="https://dmcdn.net" alt="Video Thumbnail">
             <div class="play-btn">&#9658;</div>
+            <div class="play-text">Click to Load Video 1</div>
           </div>
         </td>
       </tr>
       <tr>
         <td>
-          <!-- Cover for Video 2 (k1e33rJt1GCzVlHNGvs) -->
+          <!-- Container for Video 2 -->
           <div class="video-wrapper" onclick="loadVideo(this, 'k1e33rJt1GCzVlHNGvs')">
-            <img class="video-cover" src="https://dmcdn.net" alt="Video Thumbnail">
             <div class="play-btn">&#9658;</div>
+            <div class="play-text">Click to Load Video 2</div>
           </div>
         </td>
       </tr>
     </table>
 
     <script>
-      // Automatically replaces the thumbnail div with the actual interactive iframe when clicked
+      // Instantly injects the clean, non-autoplayable Dailymotion frame upon click
       function loadVideo(element, videoId) {
         element.innerHTML = `
           <iframe src="https://dailymotion.com{videoId}?autoplay=1" 
-                  style="position:absolute; width:100%; height:100%; border:0;" 
+                  style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;" 
                   allowfullscreen="" 
                   allow="autoplay; fullscreen; picture-in-picture; remote-playback">
           </iframe>`;
-        // Removes the cursor pointer and click handler so it acts like a normal player
         element.style.cursor = 'default';
         element.removeAttribute('onclick');
       }
