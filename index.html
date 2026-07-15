@@ -165,7 +165,13 @@
       // Create the Dailymotion iframe dynamically
       const iframe = document.createElement('iframe');
       iframe.setAttribute('src', `https://www.dailymotion.com/embed/video/${videoId}?autoplay=1`);
+
+      // --- WHAT CHANGED: We added these three lines to restore the fullscreen button ---
       iframe.setAttribute('allowfullscreen', 'true');
+      iframe.setAttribute('webkitallowfullscreen', 'true');
+      iframe.setAttribute('mozallowfullscreen', 'true');
+      // ---------------------------------------------------------------------------------
+
       iframe.setAttribute('allow', 'autoplay; fullscreen; picture-in-picture; remote-playback');
 
       // Clear the div and insert the iframe
@@ -174,6 +180,7 @@
       
       // Remove the onclick event so it doesn't try to reload on subsequent clicks
       element.removeAttribute('onclick');
+      
     }
   </script>
 
