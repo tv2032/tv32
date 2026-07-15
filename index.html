@@ -27,7 +27,7 @@
         transform: translate(-50%, -50%);
         width: 70px;
         height: 70px;
-        background: rgba(0, 0, 0, 0.7);
+        background: rgba(0, 0, 0, 0.8);
         color: #fff;
         border-radius: 50%;
         display: flex;
@@ -36,10 +36,12 @@
         font-size: 24px;
         font-family: sans-serif;
         border: 2px solid #fff;
-        transition: background 0.2s;
+        transition: background 0.2s, transform 0.2s;
+        z-index: 2;
       }
       .video-wrapper:hover .play-btn {
         background: #ff0055; /* Changes color when user hovers */
+        transform: translate(-50%, -50%) scale(1.1);
       }
     </style>
   </head>
