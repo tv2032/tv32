@@ -1,0 +1,7 @@
+#EXTM3U
+#EXT-X-VERSION:6
+
+#EXT-X-MEDIA:TYPE=AUDIO,GROUP-ID="audio",NAME="Default",DEFAULT=YES,AUTOSELECT=YES,URI="https://vod3.cf.dmcdn.net/sec2(qH05cgNLdA9XSYWAekIXddMT-iFafXYPjdChrOWO6802Tsa2kdVNh_nqqoeQk_ukOddwHC1RuipfK3noRKi7ZA-DXb4CFmXEJgYx7CcVz9pP0zf5Sv4MnF691Uff4gRc-W8C0ZH072pRQ_czr1LA4VZspny62hZk9fiyjtMnb-aHGf-AD2D3CU0e2CkFkRKMXVEZh4dvqej44ebcENsqaw)/video/fmp4/648035078/aac_q1_0/manifest.m3u8"
+
+#EXT-X-STREAM-INF:BANDWIDTH=5000000,AUDIO="audio"
+https://vod3.cf.dmcdn.net/sec2(_noKMH3E8WcXl6FP4eI4ma1jVm-H3_h0dTxijjj-rAORDXprwyOX9YlRH2kgPmHpay0tE-jtwf2LzFwMqv-aiuBLvniDVef056Q9ty-HER4tE4p_Y1NO36UWoG_rJUTJ-5hYAobWqF4HrtyILXq9Kz9YAQV9-54JzaU47S98e56sPsJD-9MyVxMYH7f6NGB7YcVICfJkqEe7baatH3XBZw)/video/fmp4/648035078/h264_hd/1/manifest.m3u8#cell=cf3
